@@ -92,12 +92,7 @@ button:hover{
   text-align: center;
 }
 
-#copyright {
-  grid-row: 5 / 6;
-  grid-column: 1 / 4;
-  text-align: center;
-  align-self: end;
-}
+
 
 /* Cursor for buttons, sliders and checkboxes*/
 
