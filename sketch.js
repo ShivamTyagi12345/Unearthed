@@ -12,7 +12,7 @@ let startCount;
 // Current state of game
 let state;
 let currentSeed = undefined;
-let seedDiv;
+
 // The turning radius to be computed
 let turnCircleRadius;
 let boulders;
@@ -283,9 +283,7 @@ function startDrill() {
   createReflections();
 }
 
-function updateDivWithLinkToThisLevel() {
-  seedDiv.html('<a href="?seed='+currentSeed+'">Persistent link to THIS level</a>');
-}
+
 
 function updateStartButtonText() {
   if (state == 'DRILLING' || state == 'CONNECTION') {
@@ -345,12 +343,7 @@ function setup() {
     aimingCheckbox = createCheckbox("Steering limits", true).id("steer-lim-box");
     fogCheckbox = createCheckbox("Fog of uncertainty", true).id("fog-box");
 
-    createDiv(
-        '<a href="instructions/instructions-slide.png">Visual instructions</a>'
-    ).id("visual-instructions");
-    createDiv(
-        'Copyright (c) 2022 Daniel Shiffman; Sergey Alyaev; ArztKlein; Denisovich; tyomka896 <a href="LICENSE.md">MIT License</a>'
-    ).id("copyright");
+  
 
     let params = getURLParams();
   if (params) {
@@ -364,8 +357,7 @@ function setup() {
     randomSeed(currentSeed);
   }
 
-  seedDiv = createDiv('<a href="?seed=">Persistent link to THIS level</a>').id('seed-div');
-  updateDivWithLinkToThisLevel();
+  
 
   machineBack = loadImage('assets/drilling-machine-small.png');
   machineFront = loadImage('assets/machine-foreground-small.png');
